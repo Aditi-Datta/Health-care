@@ -1,6 +1,7 @@
 import { Container, Grid, Typography, TextField, Button, CircularProgress, Alert } from "@mui/material";
 import React, { useState } from "react";
 import { NavLink, useLocation, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Link from '@mui/material/Link';
 import loginImg from "../../images/loginpageimage.webp";
 import Footer from "../Shared/Footer";
 import Navigation from "../Shared/Navigation";
@@ -82,9 +83,9 @@ const Login = () => {
                             <br></br>
                                 <Button variant="link" sx={{}} onClick={handleForgetPassword}>Forgotten Password?</Button>
                           
-                            <NavLink style={{ textDecoration: 'none' }} to='/register'>
+                            <Link style={{ textDecoration: 'none' }}  href='/register'>
                             <Button variant="text" sx={{ml:'14%', color:'black'}} >Create New account</Button>
-                        </NavLink>
+                        </Link>
                             <br></br><br></br>
 
                             

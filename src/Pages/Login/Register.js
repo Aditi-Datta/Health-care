@@ -2,11 +2,13 @@ import { Container, Grid, Typography, TextField, Button, CircularProgress, Alert
 import { Box } from "@mui/system";
 import { useState } from "react";
 import * as React from 'react';
-import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 // import useAuth from "../../../hooks/useAuth";
 import loginImg from "../../images/loginpageimage.webp";
 import Navigation from "../Shared/Navigation";
 import Footer from "../Shared/Footer";
+import Link from '@mui/material/Link';
+// import { Link, NavLink } from "react-router-dom";
 // import Navigation from "../../shared/Navigation/Navigation";
 // import Footer from "../../shared/Footer/Footer";
 
@@ -117,14 +119,21 @@ const Register = () => {
                             </Button>
 
                             
-                                <Box style={{color:'red',textAlign:'center'}}>{error}</Box>
+                               {/* <Box style={{color:'red',textAlign:'center'}}>{error}</Box>*/}
                             
 
-                            <NavLink
+                           {/*  <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to='/login'>
                                 <Button variant="text" sx={{ml:11}}>Already Registered? Please Login</Button>
-                            </NavLink>
+                            </NavLink>*/}
+                         
+                            
+
+
+                            <Link href="/login" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
+                            <Button variant="text" sx={{ml:11}}>Already Registered? Please Login</Button>
+               </Link><br></br>
                         </form>
                       
 

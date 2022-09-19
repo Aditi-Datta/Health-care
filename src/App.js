@@ -8,10 +8,11 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Register from './Pages/Login/Register';
-import Login from './Pages/Login/Login';
+
 
 import ContactUs from './Pages/Home/ContactUs/ContactUs';
 import AboutUs from './Pages/Home/AboutUs/AboutUs';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (
@@ -26,10 +27,10 @@ function App() {
         <Home />
       </Route>
       <Route path="/register">
-         <Register />
+         <Register></Register>
       </Route>
       <Route path="/login">
-         <Login />
+         <Login></Login>
       </Route>
       <Route path="/aboutUs">
          <AboutUs />

@@ -15,7 +15,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 // import logo from '../../../images/llogo.jpg';
 // import profile from '../../../images/profile2.png';
 import WbTwilightIcon from '@mui/icons-material/WbTwilight';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Link from '@mui/material/Link';
 // import useAuth from "../../../hooks/useAuth";
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
@@ -166,11 +167,13 @@ const Navigation = () => {
                             >
                             
                            
-                            <Link to="/home" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
+                            <Link href="/home" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
 
-                            <Link to="/aboutUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
+                            <Link href="/aboutUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
                             
-                            <NavLink to="/contactUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></NavLink>
+                            <Link href="/contactUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+                           
+                            <Link href="/login" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
                            
 
 {/*                               
