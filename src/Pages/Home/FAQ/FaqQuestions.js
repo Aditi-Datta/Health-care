@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Faq from './Faq';
 import faqImg from '../../../images/faq-img2.png';
 import Box from '@mui/material/Box';
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 function FaqQuestions() {
 
@@ -13,7 +13,7 @@ function FaqQuestions() {
             open: true
         },
         {
-            question: "What is the full name of the School?",
+            question: "What is the full name of the Health Center?",
             answer: 'Medical Program Health Care Center ',
             open: false
         },
@@ -61,7 +61,6 @@ function FaqQuestions() {
     };
     const faqQuestionStyle = {
         marginTop: '0',
-        
     };
     const toggleFAQ = index => {
         setfaqs(faqs.map((faq, i) => {
@@ -71,7 +70,6 @@ function FaqQuestions() {
             else {
                 faq.open = false;
             }
-
             return faq;
         }))
     }
@@ -82,7 +80,7 @@ function FaqQuestions() {
                 <Box style={faqsStyle}>
                     <Grid container direction="row"
                     justifyContent="center"
-                    alignItems="center"  spacing={{ xs: 3, md: 12}} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    alignItems="center"  spacing={{ xs: 3, md: 12}} >
                         <Grid  component="div" item  xs={4} sm={6} md={4} style={imgStyle} //data-aos="fade-up"
                         >
                             <img src={faqImg}></img>

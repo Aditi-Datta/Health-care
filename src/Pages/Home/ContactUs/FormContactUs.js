@@ -2,13 +2,10 @@ import React from "react";
 import TextField from '@mui/material/TextField';
 import { Box, height } from "@mui/system";
 import { Button, Typography, Alert, Container  } from "@mui/material";
-// import backgroundImg from "../../../images/sky1.jpg";
-// import useAuth from "../../../hooks/useAuth";
 import { useState } from "react";
 
 const bannerBackground = {
     
-    // backgroundColor:'#f8f8ff',
     borderRadius:'15px',
     borderWidth:  3, 
     textAlign:'center',
@@ -60,7 +57,7 @@ const ContactUsForm = () => {
     }
 
     return (
-<>
+    <>
             <Container style={bannerBackground } sx={{ height:'100vh' }} >
             <Box container justifyContent='center' style={{textAlign: 'center',paddingTop:'5%',borderBottom:  "2px solid #472ca7", paddingBottom:'5%'}}>
 
@@ -77,8 +74,7 @@ const ContactUsForm = () => {
             name='review'
             required
             variant="standard" 
-            
-           
+
             />
 
             <br></br>
@@ -117,7 +113,6 @@ const ContactUsForm = () => {
             
         {success && <Alert severity="success">Thanks for your precious review we store it successfully!!! 🧡🧡 </Alert>}
         </>
-      
 
         );
     };

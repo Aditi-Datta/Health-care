@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Navigation from '../Shared/Navigation';
 import Footer from '../Shared/Footer';
 import CarouselBanner from '../Home/Banner/CarouselBanner';

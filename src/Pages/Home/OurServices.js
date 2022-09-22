@@ -4,6 +4,7 @@ import React from 'react'
 import ambulance from '../../images/car2.jpg';
 import note from '../../images/note4.jpg';
 import injection from '../../images/injection5.jpg';
+
 function OurServices() {
   return (
     <Container style={{ marginTop:'5%', paddingBottom:'4%' ,borderBottom:  "2px solid #472ca7"}}>
@@ -19,7 +20,7 @@ function OurServices() {
 
 
 
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12, md: 12 }}
+        <Grid container spacing={{ xs: 2, md: 3 }} 
         direction="row"
         justifyContent="center"
         alignItems="center"   
@@ -56,4 +57,5 @@ function OurServices() {
   )
 }
 
-export default OurServices
+
+export default OurServices;

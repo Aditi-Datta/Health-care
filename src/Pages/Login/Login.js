@@ -5,12 +5,16 @@ import Link from '@mui/material/Link';
 import loginImg from "../../images/loginpageimage.webp";
 import Footer from "../Shared/Footer";
 import Navigation from "../Shared/Navigation";
-// import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 // import Footer from "../../shared/Footer/Footer";
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({})
+    const { user, loginUser, signInWithGoogle, isLoading, authError,handleResetPassword } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -20,14 +24,14 @@ const Login = () => {
         setLoginData(newLoginData);
     }
     const handleLoginSubmit = e => {
-        // loginUser(loginData.email, loginData.password, location, history);
+        loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
    const handleGoogleSignIn = () => {
-        // signInWithGoogle(location, history);
+        signInWithGoogle(location, history);
     }
     const handleForgetPassword = () => {
-        // handleResetPassword(loginData.email);
+        handleResetPassword(loginData.email);
     }
     const imgStyle = {
         borderRadius: 400,
@@ -89,6 +93,14 @@ const Login = () => {
                             <br></br><br></br>
 
                             
+                            {isLoading && <CircularProgress />}
+
+                            {user?.email && <Alert severity="success"  >Login successfully!!! </Alert>}
+
+                            {authError && <Alert severity="error">{authError}</Alert>}
+                            {/* <p>--------------------------------------</p> */} <br></br>
+
+
                             <Button onClick={handleGoogleSignIn} sx={{ml:8,p:1}} variant="contained" style={{   width: '45%',  alignItems:'center', backgroundColor:'#b30d52'}}>Login with Google</Button><br></br>
                         </form>
                     </Grid>

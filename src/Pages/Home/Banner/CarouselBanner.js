@@ -1,5 +1,3 @@
-import { Grid } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';

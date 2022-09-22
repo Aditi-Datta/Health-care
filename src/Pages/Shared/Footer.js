@@ -84,9 +84,7 @@ const Footer = () => {
                <Link href="/contactUs" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 , marginBottom:'4%'}}>
                    Contact Us
                </Link><br></br>
-               <Link href="/dashboard" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
-                   Dashboard
-               </Link><br></br>
+              
                <Link href="/login" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
                    Login
                </Link><br></br>
@@ -103,7 +101,7 @@ const Footer = () => {
                      <p>Victoria 8007 Bangladesh</p>
                      
                      <p >   +91 458 654 528a</p>
-                     <p  > gostudy@gmail.com</p> 
+                     <p  > healthcare@gmail.com</p> 
 
           </Grid>
  

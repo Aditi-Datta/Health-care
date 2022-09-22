@@ -7,8 +7,6 @@ const Faq = ({ faq, index, toggleFAQ }) => {
 
     const faqStyle = {
         margin: '5px',
-        // padding: '15px',
-        // backgroundColor: '#f8f8ff',
         background: 'linear-gradient(to right,   rgb(217,220,216), rgb(253,253,253))',
         color:'#244267'
     };

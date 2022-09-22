@@ -17,13 +17,16 @@ import AdbIcon from '@mui/icons-material/Adb';
 import WbTwilightIcon from '@mui/icons-material/WbTwilight';
 import { NavLink } from "react-router-dom";
 import Link from '@mui/material/Link';
-// import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 import { ListItem, ListItemButton, ListItemText } from "@mui/material";
 import mpLogo from '../../images/logo2.png';
 
 const Navigation = () => {
+
+  const { user,logout } = useAuth ();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -172,17 +175,6 @@ const Navigation = () => {
                             <Link href="/aboutUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
                             
                             <Link href="/contactUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
-                           
-                            <Link href="/login" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
-                           
-
-{/*                               
-
-                {admin &&
-                    < Link to="/admin" style={{textDecoration: 'none'}}><Button className='buttonHover'  sx={{ color: 'black' }}>Admin </Button></Link>
-                }
-
-
                                 {
                                     user?.email ?
                                         <Box>
@@ -190,9 +182,9 @@ const Navigation = () => {
                                             <Button onClick={logout}  className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
                                         </Box>
                                         :
-                                        <NavLink to="/login" style={{textDecoration: 'none'}}><Button  className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></NavLink>
+                                        <Link href="/login" style={{textDecoration: 'none'}}><Button  className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link> 
                                 }
-                              */}
+                              
                               </Button>
 
                               </Box>

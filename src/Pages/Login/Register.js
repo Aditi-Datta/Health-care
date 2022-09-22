@@ -8,6 +8,7 @@ import loginImg from "../../images/loginpageimage.webp";
 import Navigation from "../Shared/Navigation";
 import Footer from "../Shared/Footer";
 import Link from '@mui/material/Link';
+import useAuth from "../../hooks/useAuth";
 // import { Link, NavLink } from "react-router-dom";
 // import Navigation from "../../shared/Navigation/Navigation";
 // import Footer from "../../shared/Footer/Footer";
@@ -17,7 +18,7 @@ const Register = () => {
     const [loginData, setLoginData] = useState({})
     const [error, setError] = useState('');
     // const history = useHistory();
-    // const { user, registerUser, isLoading, authError } = useAuth();
+    const { user, registerUser,isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -44,7 +45,7 @@ const Register = () => {
             alert("your password didn't match!!!");
             return;
         }
-        // registerUser(loginData.email, loginData.password, loginData.name, history);
+        registerUser(loginData.email, loginData.password, loginData.name);
 
 
     }
@@ -59,7 +60,7 @@ const Register = () => {
         <div style={{backgroundColor:'rgb(96,247,227)' , textAlign:'center'}} >
 
            
-<Navigation></Navigation>
+        <Navigation></Navigation>
             <Container >
                 <Grid container  justifyContent={'center'} spacing={2} >
 
@@ -73,7 +74,7 @@ const Register = () => {
                             Register
                         </Typography>
 
-                        <form onSubmit={handleRegisterSubmit}>
+                        {!isLoading && <form onSubmit={handleRegisterSubmit}>
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
                                 id="standard-basic"
@@ -134,7 +135,11 @@ const Register = () => {
                             <Link href="/login" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
                             <Button variant="text" sx={{ml:11}}>Already Registered? Please Login</Button>
                </Link><br></br>
-                        </form>
+                        </form>}
+                        {isLoading && <CircularProgress />}
+                        {user?.email && <Alert severity="success">Registered successfully!!! </Alert>}
+
+                        {authError && <Alert severity="error">{authError}</Alert>}   
                       
 
                                     
