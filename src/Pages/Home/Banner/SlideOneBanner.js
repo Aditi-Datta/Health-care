@@ -14,7 +14,6 @@ function SlideOneBanner() {
         padding:'10%'
     }
   return (
-
     <>
     <Grid container  style={backgroundStyle}> 
     <Grid item xs={6}>
