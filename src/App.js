@@ -11,6 +11,7 @@ import Register from './Pages/Login/Register';
 
 import ContactUs from './Pages/Home/ContactUs/ContactUs';
 import AboutUs from './Pages/Home/AboutUs/AboutUs';
+
 import Login from './Pages/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
@@ -33,6 +34,10 @@ function App() {
     <Route path="/login">
        <Login></Login>
     </Route>
+    <Route path="/aboutUs">
+       <AboutUs />
+    </Route>
+  
     <Route path="/aboutUs">
        <AboutUs />
     </Route>

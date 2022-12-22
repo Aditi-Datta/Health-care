@@ -5,6 +5,7 @@ import CarouselBanner from '../Home/Banner/CarouselBanner';
 import FaqQuestions from './FAQ/FaqQuestions';
 import OurServices from './OurServices';
 import ContactUs from './ContactUs/FormContactUs';
+import NewBanner from './Banner/NewBanner';
 
 function Home() {
   const homeStyle={
@@ -13,7 +14,7 @@ function Home() {
   return (
     <div style={homeStyle}>
       <Navigation></Navigation>
-      <CarouselBanner></CarouselBanner>
+      <NewBanner></NewBanner>
       <OurServices></OurServices>
       <FaqQuestions></FaqQuestions>
       <ContactUs></ContactUs>

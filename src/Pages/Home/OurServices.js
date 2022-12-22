@@ -26,7 +26,7 @@ function OurServices() {
         alignItems="center"   
         textAlign= "center" m='2%' style={{paddingLeft:'5%', paddingRight:'5%'}}>
        
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={12} sm={12} md={4}>
         
         <img style={{borderRadius:'100%'}} src={ambulance}></img>
         <h4 style={{color:'#472ca7'}}>Online Emergency</h4>
@@ -34,7 +34,7 @@ function OurServices() {
        
         </Grid>
         
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={12} sm={12} md={4}>
        
         <img style={{borderRadius:'90%', }} src={note}></img>
         <h4 style={{color:'#472ca7'}}>Medication Service</h4>
@@ -42,7 +42,7 @@ function OurServices() {
         
         </Grid>
         
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={12} sm={12} md={4}>
         
         <img style={{borderRadius:'90%', }} src={injection}></img>
         <h4 style={{color:'#472ca7'}}>24h Health Program</h4>

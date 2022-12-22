@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import Faq from './Faq';
-import faqImg from '../../../images/faq-img2.png';
+import faqImg from '../../../images/faq-draw-bgremove.png';
 import Box from '@mui/material/Box';
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 
 function FaqQuestions() {
 
     const [faqs, setfaqs] = useState([
         {
             question: "	Do you have the Government approval?",
-            answer: 'Yes. M. P Health Care Center is approved by the Government of Bangladesh on September 2008.',
+            answer: 'Yes. M. P Hospital is approved by the Government of Bangladesh on September 2002.',
             open: true
         },
         {
-            question: "What is the full name of the Health Center?",
-            answer: 'Medical Program Health Care Center ',
+            question: "What is the full name of the Hospital?",
+            answer: 'Medical Program Hospital ',
             open: false
         },
         {
-            question: "Health Center Address?",
+            question: "Hospital Address?",
             answer: 'TB Gate, Tultikor, Sylhet, Bangladesh.',
             open: false
         },
@@ -29,12 +29,12 @@ function FaqQuestions() {
         },
         {
             question: "	E-mail Address?",
-            answer: 'info@m.p.healthCare.bd',
+            answer: 'info@m.p.hospital.bd',
             open: false
         },
         {
             question: "	Website Address?",
-            answer: 'http://www.m.p.health.care.bd/',
+            answer: 'http://www.m.p.hospital.bd/',
             open: false
         }
     ]);
@@ -75,19 +75,19 @@ function FaqQuestions() {
     }
 
     return (
-        <div style={{marginLeft:'5%', marginRight:'3%'}}>
+        <div>
             
-                <Box style={faqsStyle}>
+                <Container style={faqsStyle}>
                     <Grid container direction="row"
                     justifyContent="center"
-                    alignItems="center"  spacing={{ xs: 3, md: 12}} >
-                        <Grid  component="div" item  xs={4} sm={6} md={4} style={imgStyle} //data-aos="fade-up"
+                    alignItems="center"  spacing={{ xs: 3, md: 2}} >
+                        <Grid  component="div" item  xs={12} sm={12} md={6} style={imgStyle} //data-aos="fade-up"
                         >
                             <img src={faqImg}></img>
-                        </Grid>
+    </Grid>
 
                         <Grid 
-                        className='faqs' item  xs={4} sm={4} md={8}  component="div" style={faqQuestionStyle}>
+                        className='faqs' item  xs={12} sm={12} md={6}  component="div" style={faqQuestionStyle}>
                             <h1 className='htag' style={headderStyle}>Frequently Asked Questions</h1>
                             {
                                 faqs.map((faq, i) => (
@@ -97,7 +97,7 @@ function FaqQuestions() {
                         </Grid>
 
                     </Grid>
-                </Box>
+                </Container>
         </div>
     )
 }
