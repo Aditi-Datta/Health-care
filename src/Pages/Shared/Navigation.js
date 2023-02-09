@@ -75,7 +75,8 @@ const Navigation = () => {
                                 
                             }}
                         >
-                        M. P. Hospital
+                        
+                        M.P. Hospital
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -115,6 +116,7 @@ const Navigation = () => {
                                        
                                         <Link to="/contactUs"><Button color="inherit" sx={{ color: 'green' }}>Contact</Button></Link><br />
                                         <Link to="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
+                                        <Link to="/adminDashboard"><Button color="inherit" sx={{ color: 'green' }}>Admin</Button></Link><br />
 
                               {/*{teacher &&
                                             < Link to="/teacher"><Button color="inherit" sx={{ color: 'green' }}>Teacher </Button></Link>
@@ -159,7 +161,7 @@ const Navigation = () => {
                             
                             style={{color:'#2b1279'}}
                         >
-                        M. P. Hospital
+                        M.P. Hospital
                         </Typography>
                         <Box sx={{ display: { xs: 'none', md: 'block' } }}  >
 
@@ -176,7 +178,14 @@ const Navigation = () => {
                             <Link href="/aboutUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
                             
                             
+                            
                             <Link href="/contactUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+
+                            <Link href="/dashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+
+                            <Link href="/adminDashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+
+
                                 {
                                     user?.email ?
                                         <Box>

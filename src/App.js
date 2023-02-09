@@ -14,6 +14,17 @@ import AboutUs from './Pages/Home/AboutUs/AboutUs';
 
 import Login from './Pages/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/privateRoute/privateRoute';
+import UserDashboard from './Pages/UserDashboard/UserDashboard';
+import Cardiology from './Pages/UserDashboard/Department/Cardiology';
+import Dental from './Pages/UserDashboard/Department/Dental';
+import Neurologist from './Pages/UserDashboard/Department/Neurologist';
+import Pediatric from './Pages/UserDashboard/Department/Pediatric';
+import Traumatology from './Pages/UserDashboard/Department/Traumatology';
+import Urology from './Pages/UserDashboard/Department/Urology';
+import Xray from './Pages/UserDashboard/Department/Xray';
+import Gallery from './Pages/UserDashboard/Gallery';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
 
 function App() {
   return (
@@ -28,6 +39,14 @@ function App() {
     <Route path="/home">
       <Home />
     </Route>
+    <PrivateRoute path='/dashboard'>
+    <UserDashboard></UserDashboard>
+    </PrivateRoute>
+
+    <PrivateRoute path='/adminDashboard'>
+    <AdminDashboard/>
+    </PrivateRoute>
+
     <Route path="/register">
        <Register></Register>
     </Route>
@@ -44,6 +63,24 @@ function App() {
     <Route path="/contactUs">
        <ContactUs />
     </Route>
+
+
+
+   <Route path='/Cardiology'>
+   <Cardiology/>
+   </Route>
+
+   <Route path='/Dental'><Dental/></Route>
+   <Route path='/Neurologist'> <Neurologist/> </Route>
+   <Route path='/Pediatric'> <Pediatric/> </Route>
+   <Route path='/Traumatology'> <Traumatology/> </Route>
+   <Route path='/Urology'> <Urology/> </Route>
+   <Route path='/Xray'> <Xray/> </Route>
+
+
+   <Route path='/Gallery'> <Gallery/> </Route>
+   
+
     </Switch>
     </Router>
     </AuthProvider>

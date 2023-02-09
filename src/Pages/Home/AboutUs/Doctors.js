@@ -423,7 +423,6 @@ function Doctors() {
                 </Grid>
             </Box>
         </>
-
     )
 }
 
