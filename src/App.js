@@ -25,6 +25,8 @@ import Urology from './Pages/UserDashboard/Department/Urology';
 import Xray from './Pages/UserDashboard/Department/Xray';
 import Gallery from './Pages/UserDashboard/Gallery';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
+import AddDoctor from './Pages/AdminDashboard/AddDoctor/AddDoctor';
+import DoctorDashboard from './Pages/DoctorDashboard/DoctorDashboard';
 
 function App() {
   return (
@@ -47,6 +49,10 @@ function App() {
     <AdminDashboard/>
     </PrivateRoute>
 
+    <PrivateRoute path='/doctorDashboard'>
+    <DoctorDashboard/>
+    </PrivateRoute>
+
     <Route path="/register">
        <Register></Register>
     </Route>
@@ -66,21 +72,8 @@ function App() {
 
 
 
-   <Route path='/Cardiology'>
-   <Cardiology/>
-   </Route>
-
-   <Route path='/Dental'><Dental/></Route>
-   <Route path='/Neurologist'> <Neurologist/> </Route>
-   <Route path='/Pediatric'> <Pediatric/> </Route>
-   <Route path='/Traumatology'> <Traumatology/> </Route>
-   <Route path='/Urology'> <Urology/> </Route>
-   <Route path='/Xray'> <Xray/> </Route>
-
-
-   <Route path='/Gallery'> <Gallery/> </Route>
    
-
+   
     </Switch>
     </Router>
     </AuthProvider>

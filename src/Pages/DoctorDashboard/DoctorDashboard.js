@@ -42,9 +42,8 @@ import Traumatology from '../UserDashboard/Department/Traumatology';
 import Urology from '../UserDashboard/Department/Urology';
 import Xray from '../UserDashboard/Department/Xray';
 import Gallery from '../UserDashboard/Gallery';
-import AdminDashboardHome from './HomeAdminDashboard/AdminDashboardHome';
-import AddDoctor from './AddDoctor/AddDoctor';
-import AddEvent from './AddEvent';
+import AdminDashboardHome from '../AdminDashboard/HomeAdminDashboard/AdminDashboardHome';
+// import AddDoctor from './AddDoctor/AddDoctor';
 // import UserDashboardHome from '../UserDashboard/HomeDashboard/UserDashboardHome';
 
 const drawerWidth = 230;
@@ -93,7 +92,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-function AdminDashboard() {
+function DoctorDashboard() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -232,27 +231,7 @@ function AdminDashboard() {
                         </ListItem>
                     </Link>
 
-                    <Link to={`${url}/addDoctor`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                    <ListItem disablePadding>
-                        <ListItemButton style={{ borderRadius: '0 40px 40px 0', padding: '.4rem ' }}>
-                            <ListItemIcon>
-                                <LayersIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-                            </ListItemIcon>
-                            <ListItemText primary="Add Doctor" style={{ marginLeft: '-2rem' }} />
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-
-                <Link to={`${url}/addEvent`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem disablePadding>
-                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', padding: '.4rem ' }}>
-                        <ListItemIcon>
-                            <LayersIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-                        </ListItemIcon>
-                        <ListItemText primary="Add Event" style={{ marginLeft: '-2rem' }} />
-                    </ListItemButton>
-                </ListItem>
-            </Link>
+                    
 
                 </Container>
             </Box>
@@ -277,7 +256,7 @@ function AdminDashboard() {
                         <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
                     </IconButton>
                     <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
-                        Admin
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -315,9 +294,9 @@ function AdminDashboard() {
                         {user.emailVerified ?
 
                             <Box>
-                                <Route exact path={path}>
-                                    <AdminDashboardHome/>
-                                </Route>
+                            <Route exact path={path}>
+                            <AdminDashboardHome/>
+                        </Route>
                                 <Route exact path={`${path}/Cardiology`}>
                                     <Cardiology/>
                                 </Route>
@@ -342,12 +321,7 @@ function AdminDashboard() {
                                 <Route exact path={`${path}/Gallery`}>
                                     <Gallery/>
                                 </Route>
-                                <Route exact path={`${path}/addDoctor`}>
-                                    <AddDoctor/>
-                                </Route>
-                                <Route exact path={`${path}/addEvent`}>
-                                    <AddEvent/>
-                                </Route>
+                                
                             </Box>
 
                             : <p>Your email is not verified</p>}
@@ -365,4 +339,4 @@ function AdminDashboard() {
         </>
     );
 }
-export default AdminDashboard;
+export default DoctorDashboard;

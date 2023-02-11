@@ -118,6 +118,7 @@ const Navigation = () => {
                                         <Link to="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
                                         <Link to="/adminDashboard"><Button color="inherit" sx={{ color: 'green' }}>Admin</Button></Link><br />
 
+                                        <Link to="/doctorDashboard"><Button color="inherit" sx={{ color: 'green' }}>Doctor</Button></Link><br />
                               {/*{teacher &&
                                             < Link to="/teacher"><Button color="inherit" sx={{ color: 'green' }}>Teacher </Button></Link>
                                         }
@@ -184,6 +185,8 @@ const Navigation = () => {
                             <Link href="/dashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
 
                             <Link href="/adminDashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+
+                            <Link href="/doctorDashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Doctor</Button></Link>
 
 
                                 {
