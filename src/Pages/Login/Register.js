@@ -2,7 +2,7 @@ import { Container, Grid, Typography, TextField, Button, CircularProgress, Alert
 import { Box } from "@mui/system";
 import { useState } from "react";
 import * as React from 'react';
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 // import useAuth from "../../../hooks/useAuth";
 import loginImg from "../../images/loginpageimage.webp";
 import Navigation from "../Shared/Navigation";
@@ -17,8 +17,8 @@ import useAuth from "../../hooks/useAuth";
 const Register = () => {
     const [loginData, setLoginData] = useState({})
     const [error, setError] = useState('');
-    // const history = useHistory();
-    const { user, registerUser,isLoading, authError } = useAuth();
+    const history = useHistory();
+    const { user, registerUser, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -26,7 +26,7 @@ const Register = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        console.log(newLoginData);
+        // console.log(newLoginData);
     }
 
     const handleRegisterSubmit = e => {
@@ -40,12 +40,12 @@ const Register = () => {
             setError('Password Must contain 1 digit,1 alphabet,2 special character & 8 characters long');
             return;
         }
-        
+
         if (loginData.password !== loginData.conpassword) {
             alert("your password didn't match!!!");
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name);
+        registerUser(loginData.email, loginData.password, loginData.name, history);
 
 
     }
@@ -53,24 +53,24 @@ const Register = () => {
     const imgStyle = {
         borderRadius: 400,
         width: '40%',
-        
+
     }
 
     return (
-        <div style={{backgroundColor:'rgb(96,247,227)' , textAlign:'center'}} >
+        <div style={{ backgroundColor: 'rgb(96,247,227)', textAlign: 'center' }} >
 
-           
-        <Navigation></Navigation>
+
+            <Navigation></Navigation>
             <Container >
-                <Grid container  justifyContent={'center'} spacing={2} >
+                <Grid container justifyContent={'center'} spacing={2} >
 
-                <Grid item xs={12} md={12} sx={{mt: 10 }}>
+                    <Grid item xs={12} md={12} sx={{ mt: 10 }}>
                         <img style={imgStyle} src={loginImg} alt="" />
 
                     </Grid>
 
-                    <Grid item sx={{ mt: 5, mb:10}} xs={12} md={8} >
-                        <Typography variant="h4"   gutterBottom >
+                    <Grid item sx={{ mt: 5, mb: 10 }} xs={12} md={8} >
+                        <Typography variant="h4" gutterBottom >
                             Register
                         </Typography>
 
@@ -116,36 +116,38 @@ const Register = () => {
 
 
                             <Button sx={{ width: '75%', m: 3 }}
-                                type="submit" style={{ backgroundColor:'#b30d52'}} variant="contained">Register
+                                type="submit" style={{ backgroundColor: '#b30d52' }} variant="contained">Register
                             </Button>
 
-                            
-                               {/* <Box style={{color:'red',textAlign:'center'}}>{error}</Box>*/}
-                            
 
-                           {/*  <NavLink
+                            <Box style={{ color: 'red', textAlign: 'center' }}>{error}</Box>
+
+
+                            {/* <NavLink
                                 style={{ textDecoration: 'none' }}
-                                to='/login'>
+                                 to='/login'>
                                 <Button variant="text" sx={{ml:11}}>Already Registered? Please Login</Button>
-                            </NavLink>*/}
-                         
-                            
+     </NavLink> */}
 
 
-                            <Link href="/login" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
-                            <Button variant="text" sx={{ml:11}}>Already Registered? Please Login</Button>
-               </Link><br></br>
+
+
+                            <Link href="/login" color="inherit" style={{ textDecoration: 'none', fontWeight: 425 }}>
+                                <Button variant="text" sx={{ ml: 11 }}>Already Registered? Please Login</Button>
+                            </Link><br></br>
                         </form>}
+
                         {isLoading && <CircularProgress />}
+                        
                         {user?.email && <Alert severity="success">Registered successfully!!! </Alert>}
 
-                        {authError && <Alert severity="error">{authError}</Alert>}   
-                      
+                        {authError && <Alert severity="error">{authError}</Alert>}
 
-                                    
+
+
 
                     </Grid>
-                    
+
 
                 </Grid>
             </Container>

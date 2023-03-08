@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Alert } from "@mui/material";
 import useAuth from "../../../../hooks/useAuth";
 
 
@@ -24,6 +24,7 @@ const style = {
 
 const PediatricModal = ({ openModal, handleModalClose, setRegSuccess }) => {
     const { user } = useAuth();
+    const [success, setSuccess] = useState(false);
     const initialInfo = { patientName: user.displayName, email: user.email }
     const [patientInfo, setpatientInfo] = useState(initialInfo);
 
@@ -41,9 +42,26 @@ const PediatricModal = ({ openModal, handleModalClose, setRegSuccess }) => {
         // collect data
         const patientSubmit = {
             ...patientInfo,
-
         }
-    }
+    // send to the server
+    fetch('http://localhost:5000/appointment', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(patientSubmit)
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+
+                setSuccess(true);
+                handleModalClose();
+            }
+        });
+    e.preventDefault();
+}
 
     return (
         <>
@@ -82,6 +100,16 @@ const PediatricModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 label="Patient Age"
                                 name='PatientAge'
                                 onBlur={handleOnBlur}
+                                required
+                                variant="outlined"
+                            />
+                            <TextField
+                                id="outlined-basic"
+                                sx={{ width: '90%', m: 2 }}
+                                label="Appointment For"
+                                name='Appointment'
+                                required
+                                onBlur={handleOnBlur}
                                 variant="outlined"
                             />
                             <TextField
@@ -93,6 +121,7 @@ const PediatricModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 onBlur={handleOnBlur}
                                 defaultValue={user.email}
                                 variant="outlined"
+                                required
                             />
                             <Grid container justifyContent="center">
                             <Button type='submit' variant="contained"
@@ -101,8 +130,9 @@ const PediatricModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                             >
                                 Submit</Button>
                             </Grid>
-                            
                         </form>
+                        {success && <Alert severity="success"  >Add Event successfully!!! </Alert>}
+                        <br></br>
                     </Box>
                 </Fade>
             </Modal>

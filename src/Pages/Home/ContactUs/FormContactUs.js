@@ -4,6 +4,8 @@ import { Box, height } from "@mui/system";
 import { Button, Typography, Alert, Container  } from "@mui/material";
 import { useState } from "react";
 
+import useAuth from "../../../hooks/useAuth";
+
 const bannerBackground = {
     
     borderRadius:'15px',
@@ -17,28 +19,30 @@ const bannerBackground = {
 const ContactUsForm = () => {
 
     const [success, setSuccess] = useState(false);
-    // const { user } = useAuth();
-    // const initialInfo = { Name: user.displayName, email: user.email, review:'' }
-    // const [userInfo, setUserInfo] = useState(initialInfo);
-
+    const { user } = useAuth();
+    const initialInfo = { Name: user.displayName, email: user.email, review:'' }
+    
+    const [userInfo, setUserInfo] = useState(initialInfo);
+    
     const handleOnBlur = e => {
 
         const field = e.target.name;
         const value = e.target.value;
-        // const newInfo = { ...userInfo };
-        // newInfo[field] = value;
-        // setUserInfo(newInfo);
+        const newInfo = { ...userInfo };
+        newInfo[field] = value;
+        // console.log(newInfo);
+        setUserInfo(newInfo);
     }
 
     const handleContactUs = e => {
 
         // collect data
         const ContactUs = {
-            // ...userInfo,
+            ...userInfo,
         }
 
         // send to the server
-        fetch('https://secure-temple-79203.herokuapp.com/contactUs', {
+        fetch('http://localhost:5000/review', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -63,7 +67,9 @@ const ContactUsForm = () => {
 
             <Typography variant="h4" style={{margin:15,color:'#160254'}}><span style={{backgroundColor:'#e1e1f1'}}>Stay W</span>ith Us</Typography>
 
-            <form onSubmit={handleContactUs}>
+            <form 
+            onSubmit={handleContactUs}
+            >
 
             <TextField 
             id="standard-basic"
@@ -83,6 +89,8 @@ const ContactUsForm = () => {
             style={{margin:18, width:'50vw'}} 
             label="Name" 
             id="standard-basic"
+            name='name'
+            defaultValue={user.displayName}
             onBlur={handleOnBlur} 
             textColor="white"
             variant="standard" 
@@ -93,10 +101,11 @@ const ContactUsForm = () => {
             <TextField 
             style={{margin:18, width:'50vw'}} 
             label="Email" 
+            name='email'
             id="standard-basic"
             variant="standard" 
             onBlur={handleOnBlur} 
-            // defaultValue={user.email}
+            defaultValue={user.email}
             
              />
             <br></br>
@@ -111,7 +120,7 @@ const ContactUsForm = () => {
             </Box>
             </Container>
             
-        {success && <Alert severity="success">Thanks for your precious review we store it successfully!!! 🧡🧡 </Alert>}
+         {success && <Alert severity="success">Thanks for your precious review we store it successfully!!! 🧡🧡 </Alert>}
         </>
 
         );

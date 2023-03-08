@@ -22,7 +22,7 @@ const style = {
 
 };
 
-const NeurologistModal = ({ openModal, handleModalClose, setRegSuccess }) => {
+const XrayModal = ({ openModal, handleModalClose, setRegSuccess }) => {
     const { user } = useAuth();
     const [success, setSuccess] = useState(false);
     const initialInfo = { patientName: user.displayName, email: user.email }
@@ -43,25 +43,25 @@ const NeurologistModal = ({ openModal, handleModalClose, setRegSuccess }) => {
         const patientSubmit = {
             ...patientInfo,
         }
-    // send to the server
-    fetch('http://localhost:5000/appointment', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(patientSubmit)
-    })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.insertedId) {
+        // send to the server
+        fetch('http://localhost:5000/appointment', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(patientSubmit)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
 
-                setSuccess(true);
-                handleModalClose();
-            }
-        });
-    e.preventDefault();
-}
+                    setSuccess(true);
+                    handleModalClose();
+                }
+            });
+        e.preventDefault();
+    }
 
     return (
         <>
@@ -99,14 +99,15 @@ const NeurologistModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 sx={{ width: '90%', m: 2 }}
                                 label="Patient Age"
                                 name='PatientAge'
+                                required
                                 onBlur={handleOnBlur}
                                 variant="outlined"
-                                required
+                                
                             />
                             <TextField
                                 id="outlined-basic"
                                 sx={{ width: '90%', m: 2 }}
-                                label="Appointment For"
+                                label="Booking for"
                                 name='Appointment'
                                 required
                                 onBlur={handleOnBlur}
@@ -118,10 +119,11 @@ const NeurologistModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 label="Email"
                                 type='email'
                                 name='email'
+                                required
                                 onBlur={handleOnBlur}
                                 defaultValue={user.email}
                                 variant="outlined"
-                                required
+                                
                             />
                             <Grid container justifyContent="center">
                             <Button type='submit' variant="contained"
@@ -141,7 +143,4 @@ const NeurologistModal = ({ openModal, handleModalClose, setRegSuccess }) => {
 };
 
 
-
-
-
-export default NeurologistModal
+export default XrayModal

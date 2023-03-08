@@ -1,11 +1,11 @@
 
 import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import CardiologyImg from '../../../images/Xray.png'
-import XrayModal from './ModalOpen/XrayModal';
-import CarouselDept from './OtherDepartments/CarouselDept'
+import CardiologyImg from '../../../../images/Xray.png'
+import BloodModal from './BloodModal';
+import CarouselDept from '../../Department/OtherDepartments/CarouselDept'
 
-function Xray() {
+function BloodTest() {
 
   const [openModal, setOpenModal] = React.useState(false);
   const handleModalOpen = () => setOpenModal(true);
@@ -14,7 +14,7 @@ function Xray() {
   const [regSuccess, setRegSuccess] = useState(false);
 
   return (
-    <Container style={{paddingTop:'5%'}} >
+    <Container style={{paddingTop:'5%', paddingBottom:'5%'}} >
 
     <Grid  container direction="row"
     justifyContent="space-around"
@@ -28,7 +28,7 @@ function Xray() {
     </Grid>
     
     <Grid container item xs={4} sm={6} md={8} style={{  padding: '5%' }}>
-      <h2 style={{fontWeight: 'bold'}}>Xray</h2>
+      <h2 style={{fontWeight: 'bold'}}>Blood Analysis</h2>
       <p>Our Xray month in review spotlights the most popular content from the past month. The top content from August 2022 includes new antithrombotic guidance from CHEST, USPSTF recommendation statement on statin use in primary prevention, and coverage of ESC 22, including DELIVER, TIME, and other late-breaking data.</p>
 
       <button variant="contained" type="submit"
@@ -38,7 +38,7 @@ function Xray() {
         fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
         borderRadius: '15px'
-    }}>Available Appointment</button>
+    }}>Booking</button>
     </Grid>
 
     
@@ -47,16 +47,16 @@ function Xray() {
 
    
 
-    <CarouselDept></CarouselDept>
+    
 
-    <XrayModal
+    <BloodModal
     openModal={openModal}
     handleModalClose={handleModalClose}
     setRegSuccess={setRegSuccess}
-  ></XrayModal>
+  ></BloodModal>
 
     </Container>
   )
 }
 
-export default Xray
+export default BloodTest

@@ -38,11 +38,12 @@ import Cardiology from './Department/Cardiology';
 import Dental from './Department/Dental';
 import Neurologist from './Department/Neurologist';
 import Pediatric from './Department/Pediatric';
-import Traumatology from './Department/Traumatology';
-import Urology from './Department/Urology';
-import Xray from './Department/Xray';
 import Gallery from './Gallery';
 import UserDashboardHome from './HomeDashboard/UserDashboardHome';
+import Xray from './MedicalTest/Xray/Xray';
+import Kidney from './MedicalTest/Kidney/Kidney';
+import Liver from './MedicalTest/Liver/Liver';
+import BloodTest from './MedicalTest/BloodTest/BloodTest';
 
 const drawerWidth = 230;
 
@@ -110,7 +111,7 @@ function UserDashboard() {
 
             <Box sx={{
                 background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))',
-                height: '90vh', overflowX: 'hidden', overflowY: 'hidden'
+                height: '120vh', overflowX: 'hidden', overflowY: 'hidden'
             }} style={{ textAlign: 'center' }}>
                 <Toolbar />
                 <Container style={{ marginLeft: '5%' }}>
@@ -126,7 +127,7 @@ function UserDashboard() {
                         </ListItem>
                     </Link>
                     <TreeView
-                        style={{ textAlign: 'left', marginLeft: '0%'}}
+                        style={{ textAlign: 'left', marginLeft: '0%' }}
                         aria-label="file system navigator"
                         defaultExpanded={['1']}
 
@@ -143,7 +144,7 @@ function UserDashboard() {
                     >
 
                         <TreeItem nodeId="1" label="Department"
-                            style={{color: '#08558b'}}>
+                            style={{ color: '#08558b' }}>
                             <Link to={`${url}/Cardiology`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
                                 <ListItem disablePadding>
                                     <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
@@ -184,38 +185,85 @@ function UserDashboard() {
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
-                            <Link to={`${url}/Traumatology`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                                <ListItem disablePadding>
-                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
-                                        <ListItemIcon>
-                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary="Traumatology" style={{ marginLeft: '-2rem' }} />
-                                    </ListItemButton>
-                                </ListItem>
-                            </Link>
-                            <Link to={`${url}/Urology`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                                <ListItem disablePadding>
-                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
-                                        <ListItemIcon>
-                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary="Urology" style={{ marginLeft: '-2rem' }} />
-                                    </ListItemButton>
-                                </ListItem>
-                            </Link>
-                            <Link to={`${url}/Xray`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                                <ListItem disablePadding>
-                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
-                                        <ListItemIcon>
-                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                                        </ListItemIcon>
-                                        <ListItemText primary="Xray" style={{ marginLeft: '-2rem' }} />
-                                    </ListItemButton>
-                                </ListItem>
-                            </Link>
+
+
                         </TreeItem>
                     </TreeView>
+
+
+                    <TreeView
+                        style={{ textAlign: 'left', marginLeft: '0%' }}
+                        aria-label="file system navigator"
+                        defaultExpanded={['1']}
+
+
+                        defaultCollapseIcon={
+                            <div style={{ padding: '.3rem 0', }}>
+                                <ArrowDropUpIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
+                            </div>}
+                        defaultExpandIcon={<div style={{ padding: '.3rem 0', }}>
+                            <ArrowDropDownIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
+                        </div>}
+
+                        sx={{ flexGrow: 1, overflowY: 'hidden', overflowX: 'hidden' }}
+                    >
+
+                        <TreeItem nodeId="1" label="MedicalTest"
+                            style={{ color: '#08558b' }}>
+
+
+                            <Link to={`${url}/xRay`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+                                <ListItem disablePadding>
+                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
+                                        <ListItemIcon>
+                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
+                                        </ListItemIcon>
+                                        <ListItemText primary="XRay" style={{ marginLeft: '-2rem' }} />
+                                    </ListItemButton>
+                                </ListItem>
+                            </Link>
+
+                            <Link to={`${url}/kidney`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+                                <ListItem disablePadding>
+                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
+                                        <ListItemIcon>
+                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Kidney" style={{ marginLeft: '-2rem' }} />
+                                    </ListItemButton>
+                                </ListItem>
+                            </Link>
+
+                            <Link to={`${url}/liver`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+                                <ListItem disablePadding>
+                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
+                                        <ListItemIcon>
+                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Liver" style={{ marginLeft: '-2rem' }} />
+                                    </ListItemButton>
+                                </ListItem>
+                            </Link>
+
+
+
+                            <Link to={`${url}/bloodtest`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+                                <ListItem disablePadding>
+                                    <ListItemButton style={{ borderRadius: '0 40px 40px 0', marginLeft: '15%' }}>
+                                        <ListItemIcon>
+                                            <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
+                                        </ListItemIcon>
+                                        <ListItemText primary="BloodTest" style={{ marginLeft: '-2rem' }} />
+                                    </ListItemButton>
+                                </ListItem>
+                            </Link>
+
+
+
+                        </TreeItem>
+                    </TreeView>
+
+
 
                     <Link to={`${url}/Gallery`} style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
                         <ListItem disablePadding>
@@ -237,51 +285,51 @@ function UserDashboard() {
         <>
 
             <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))' }}>
-                <Toolbar>
-                    <IconButton
-                        backgroundColor="black"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        style={{ color: 'black' }}
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                    >
-                        <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
-                    </IconButton>
-                    <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
-                        Dashboard
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                sx={{
-                    mx: 5,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box',
-                    },
-
-                }}
-                variant="persistent"
-                anchor="left"
-                open={open}
-            >
-                <DrawerHeader sx={{ background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))' }}>
-                    <Box >
-                        <IconButton onClick={handleDrawerClose} style={{ color: 'black', fontSize: '2.5em' }}>
-                            {theme.direction === 'ltr' ?
-                                <ArrowCircleLeftIcon style={{ color: '#08558b' }} /> : <ChevronRightIcon />}
+                <CssBaseline />
+                <AppBar position="fixed" open={open} style={{ background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))' }}>
+                    <Toolbar>
+                        <IconButton
+                            backgroundColor="black"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            style={{ color: 'black' }}
+                            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        >
+                            <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
                         </IconButton>
-                    </Box>
-                </DrawerHeader>
-                <Divider style={{ backgroundColor: ' white ' }}></Divider>
-                {drawer}
+                        <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
+                            Dashboard
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    sx={{
+                        mx: 5,
+                        flexShrink: 0,
+                        '& .MuiDrawer-paper': {
+                            width: drawerWidth,
+                            boxSizing: 'border-box',
+                        },
+
+                    }}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                >
+                    <DrawerHeader sx={{ background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))' }}>
+                        <Box >
+                            <IconButton onClick={handleDrawerClose} style={{ color: 'black', fontSize: '2.5em' }}>
+                                {theme.direction === 'ltr' ?
+                                    <ArrowCircleLeftIcon style={{ color: '#08558b' }} /> : <ChevronRightIcon />}
+                            </IconButton>
+                        </Box>
+                    </DrawerHeader>
+                    <Divider style={{ backgroundColor: ' white ' }}></Divider>
+                    {drawer}
 
 
-            </Drawer>
+                </Drawer>
                 <Box>
                     <Toolbar />
 
@@ -296,29 +344,38 @@ function UserDashboard() {
                                     <Cardiology/>
                                 </Route>
                                 <Route exact path={`${path}/Dental`}>
-                                    <Dental/>
+                                    <Dental />
                                 </Route>
                                 <Route exact path={`${path}/Neurologist`}>
-                                    <Neurologist/>
+                                    <Neurologist />
                                 </Route>
                                 <Route exact path={`${path}/Pediatric`}>
-                                    <Pediatric/>
+                                    <Pediatric />
                                 </Route>
-                                <Route exact path={`${path}/Traumatology`}>
-                                    <Traumatology/>
+
+
+                                <Route exact path={`${path}/xRay`}>
+                                    <Xray />
                                 </Route>
-                                <Route exact path={`${path}/Urology`}>
-                                    <Urology/>
+                                <Route exact path={`${path}/kidney`}>
+                                    <Kidney />
                                 </Route>
-                                <Route exact path={`${path}/Xray`}>
-                                    <Xray/>
+                                <Route exact path={`${path}/liver`}>
+                                    <Liver />
                                 </Route>
+                                <Route exact path={`${path}/bloodtest`}>
+                                    <BloodTest />
+                                </Route>
+
+
+
+
                                 <Route exact path={`${path}/Gallery`}>
-                                    <Gallery/>
+                                    <Gallery />
                                 </Route>
                             </Box>
 
-                            : <p>Your email is not verified</p>}
+                            : <p style={{ color: 'red' }}>Your email is not verified</p>}
 
                     </Switch>
                 </Box>

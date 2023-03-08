@@ -1,7 +1,7 @@
 import React from 'react'
 import chair from '../../../images/chair.png';
 import bgImg from '../../../images/bg.png';
-import { Grid } from '@mui/material';
+import { Grid, Link } from '@mui/material';
 import { Box, Container } from '@mui/system';
 
 function NewBanner() {
@@ -37,12 +37,13 @@ function NewBanner() {
                             <h1 style={{ fontWeight: '700' }}>Your New Smile Starts <br />Here!</h1>
                             <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi <br /> exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
+                            <Link href="/login">
                             <button variant="contained" type="submit" style={{
                                 marginTop: '2%', padding: '15px 55px', color: 'white',
                                 fontWeight: '400',
                                 background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
                                 borderRadius: '15px'
-                            }}>Get Started</button>
+                            }}>Get Started</button> </Link>
                         </Box>
 
                     </Grid>

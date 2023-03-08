@@ -1,7 +1,8 @@
 import { Container } from '@mui/system'
 import React from 'react'
+import Appointment from '../../DoctorDashboard/HomeDoctorDashboard/Apointment/Appointment'
 import FirstPart from './FirstPart/FirstPart'
-import SecondPart from './SecondPart/SecondPart'
+
 
 function AdminDashboardHome() {
   return (
@@ -11,8 +12,7 @@ function AdminDashboardHome() {
 
     
     <FirstPart></FirstPart>
-    <SecondPart ></SecondPart>
-
+    <Appointment></Appointment>
     </Container>
   )
 }
