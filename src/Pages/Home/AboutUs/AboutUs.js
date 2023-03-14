@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../../Shared/Footer'
 import Navigation from '../../Shared/Navigation'
 import FaqQuestions from '../FAQ/FaqQuestions'
-import Doctors from './Doctors'
+
 import FounderSays from './FounderSays'
 
 function AboutUs() {
@@ -14,7 +14,6 @@ function AboutUs() {
 
     <Navigation></Navigation>
     <FounderSays></FounderSays>
-    <Doctors></Doctors>
     <FaqQuestions></FaqQuestions>
     <Footer></Footer>
     </div>

@@ -25,45 +25,45 @@ import mpLogo from '../../images/logo2.png';
 
 const Navigation = () => {
 
-  const { user,logout } = useAuth ();
+    const { user,doctor, admin, logout } = useAuth();
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-  };
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
 
-  const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-  };
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
 
-  const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-  };
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
-  
-  const appBarStyle={
-      background: 'linear-gradient(to right,rgb(101,96,210),rgb(96,247,227))'
-  }
+
+    const appBarStyle = {
+        background: 'linear-gradient(to right,rgb(101,96,210),rgb(96,247,227))'
+    }
     return (
-    
-      <Box sx={{ flexGrow: 1 , marginBottom:'5%'}}>
+
+        <Box sx={{ flexGrow: 1, marginBottom: '5%' }}>
             <AppBar position="static" style={appBarStyle}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
 
                         {/*<LightbulbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} style={{ color: 'yellow' }} />*/}
-                        <div sx={{  display: {  xs: 'none', md: 'flex' } , mr: 2 }} >
-                        <img style={{borderRadius:'50'}} src={mpLogo} ></img>
+                        <div sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} >
+                            <img style={{ borderRadius: '50' }} src={mpLogo} ></img>
                         </div>
-                       
+
                         <Typography
                             variant="h6"
-                            
+
                             sx={{
 
                                 display: { xs: 'none', md: 'flex' },
@@ -72,11 +72,11 @@ const Navigation = () => {
                                 flexGrow: 1,
                                 // color: 'inherit',
                                 textDecoration: 'none',
-                                
+
                             }}
                         >
-                        
-                        M.P. Hospital
+
+                            M.P. Hospital
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -113,29 +113,31 @@ const Navigation = () => {
                                     <Box style={{ textAlign: "center" }}>
                                         <Link to="/home"><Button color="inherit" sx={{ color: 'green', }}>Home</Button></Link><br />
                                         <Link to="/aboutus"><Button color="inherit" sx={{ color: 'green' }}>About</Button></Link><br />
-                                       
+
                                         <Link to="/contactUs"><Button color="inherit" sx={{ color: 'green' }}>Contact</Button></Link><br />
                                         <Link to="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
-                                        <Link to="/adminDashboard"><Button color="inherit" sx={{ color: 'green' }}>Admin</Button></Link><br />
 
-                                        <Link to="/doctorDashboard"><Button color="inherit" sx={{ color: 'green' }}>Doctor</Button></Link><br />
-                              {/*{teacher &&
-                                            < Link to="/teacher"><Button color="inherit" sx={{ color: 'green' }}>Teacher </Button></Link>
+                                       {/* <Link to="/adminDashboard"><Button color="inherit" sx={{ color: 'green' }}>Admin</Button></Link><br />
+
+                                        <Link to="/doctorDashboard"><Button color="inherit" sx={{ color: 'green' }}>Doctor</Button></Link><br />*/}
+                            
+                                        {doctor &&
+                                            < Link to="/doctorDashboard"><Button color="inherit" sx={{ color: 'green' }}>Doctor </Button></Link>
                                         }
                                         {admin &&
-                                            < Link to="/admin"><Button color="inherit" sx={{ color: 'green' }}>Admin </Button></Link>
+                                            < Link to="/adminDashboard"><Button color="inherit" sx={{ color: 'green' }}>Admin </Button></Link>
                                         }
 
 
                                         {
                                             user?.email ?
                                                 <Box>
-                                                    
+
                                                     <Button onClick={logout} color="inherit" sx={{ color: 'green' }}>Logout</Button><br />
                                                 </Box>
                                                 :
                                                 <NavLink to="/login"><Button color="inherit" sx={{ color: 'green' }}>Login</Button></NavLink>
-                                        }*/}
+                                        }
 
                                     </Box>
 
@@ -143,7 +145,7 @@ const Navigation = () => {
 
                             </Menu>
                         </Box>
-                        
+
                         <Typography
                             variant="h5"
                             noWrap
@@ -157,57 +159,66 @@ const Navigation = () => {
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
                                 textDecoration: 'none',
-                                
+
                             }}
-                            
-                            style={{color:'#2b1279'}}
+
+                            style={{ color: '#2b1279' }}
                         >
-                        M.P. Hospital
+                            M.P. Hospital
                         </Typography>
                         <Box sx={{ display: { xs: 'none', md: 'block' } }}  >
 
                             <Button
-                            
+
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2 }}
-                              
+
                             >
-                            
-                           
-                            <Link href="/home" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
 
-                            <Link href="/aboutUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
-                            
-                            
-                            
-                            <Link href="/contactUs" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
 
-                            <Link href="/dashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+                                <Link href="/home" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
 
-                            <Link href="/adminDashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+                                <Link href="/aboutUs" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
 
-                            <Link href="/doctorDashboard" style={{textDecoration:'none'}}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Doctor</Button></Link>
+
+
+                                <Link href="/contactUs" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+
+                                <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+
+                                {/*<Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+
+                        <Link href="/doctorDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Doctor</Button></Link>*/}
+
+                        {doctor &&
+                            < Link to="/doctorDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Doctor </Button></Link>
+                        }
+
+                        {admin &&
+                            < Link to="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' sx={{ color: 'black' }}>Admin </Button></Link>
+                        }
+
 
 
                                 {
                                     user?.email ?
                                         <Box>
-                                            
-                                            <Button onClick={logout}  className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
+
+                                            <Button onClick={logout} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
                                         </Box>
                                         :
-                                        <Link href="/login" style={{textDecoration: 'none'}}><Button  className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link> 
+                                        <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
                                 }
-                              
-                              </Button>
 
-                              </Box>
-      
-                          </Toolbar>
-                      </Container>
-                  </AppBar>
-              </Box >
-        
+                            </Button>
+
+                        </Box>
+
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </Box >
+
     );
 };
 

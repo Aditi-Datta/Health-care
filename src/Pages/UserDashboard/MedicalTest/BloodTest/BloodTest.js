@@ -3,7 +3,6 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typ
 import React, { useState } from 'react'
 import CardiologyImg from '../../../../images/Xray.png'
 import BloodModal from './BloodModal';
-import CarouselDept from '../../Department/OtherDepartments/CarouselDept'
 
 function BloodTest() {
 

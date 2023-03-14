@@ -18,6 +18,8 @@ import PrivateRoute from './Pages/Login/privateRoute/privateRoute';
 import UserDashboard from './Pages/UserDashboard/UserDashboard';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
 import DoctorDashboard from './Pages/DoctorDashboard/DoctorDashboard';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import DoctorRoute from './Pages/Login/DoctorRoute/DoctorRoute';
 
 function App() {
   return (
@@ -36,13 +38,13 @@ function App() {
     <UserDashboard></UserDashboard>
     </PrivateRoute>
 
-    <PrivateRoute path='/adminDashboard'>
+    <AdminRoute path='/adminDashboard'>
     <AdminDashboard/>
-    </PrivateRoute>
+    </AdminRoute>
 
-    <PrivateRoute path='/doctorDashboard'>
+    <DoctorRoute path='/doctorDashboard'>
     <DoctorDashboard/>
-    </PrivateRoute>
+    </DoctorRoute>
 
     <Route path="/register">
        <Register></Register>

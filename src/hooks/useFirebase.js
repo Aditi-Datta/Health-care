@@ -148,6 +148,8 @@ useEffect(() => {
     return{
         user,
         token,
+        doctor,
+        admin,
         registerUser,
         isLoading,
         authError,

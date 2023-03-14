@@ -3,8 +3,7 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typ
 import React, { useState } from 'react'
 import CardiologyImg from '../../../images/Cardiology.png'
 import NeurologistModal from './ModalOpen/NeurologistModal';
-import CarouselDept from './OtherDepartments/CarouselDept'
-
+import Doctors from './Doctors';
 function Neurologist() {
 
   const [openModal, setOpenModal] = React.useState(false);
@@ -48,7 +47,7 @@ function Neurologist() {
 
    
 
-    <CarouselDept></CarouselDept>
+    <Doctors></Doctors>
 
 
     <NeurologistModal

@@ -2,8 +2,9 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import CardiologyImg from '../../../images/Cardiology.png'
+import Doctors from './Doctors';
 import CardiologyModal from './ModalOpen/CardiologyModal'
-import CarouselDept from './OtherDepartments/CarouselDept'
+
 
 function Cardiology() {
 
@@ -52,7 +53,7 @@ function Cardiology() {
 
 
 
-      <CarouselDept></CarouselDept>
+    <Doctors></Doctors>
 
 
       <CardiologyModal

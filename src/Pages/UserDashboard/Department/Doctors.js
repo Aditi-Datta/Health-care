@@ -1,56 +1,44 @@
-import { AppBar, Box, Card, CardActionArea, CardContent, CardMedia, Divider, Grid, Paper, Typography } from '@mui/material'
-import { Container } from '@mui/system';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
-import teacher2 from '../../../images/doctors1.jpeg';
-import teacher3 from '../../../images/doctors2.jpg';
-import teacher4 from '../../../images/doctors3.jpg';
-import teacher5 from '../../../images/doctors4.jpg';
-import teacher6 from '../../../images/doctors6.jpg';
-import teacher7 from '../../../images/doctors6.jpg';
-import teacher8 from '../../../images/doctors7.jpg';
-import teacher9 from '../../../images/doctors5.jpg';
+import Doctor1 from '../../../images/doctors1.jpeg'
+import Doctor2 from '../../../images/doctors2.jpg'
+import Doctor3 from '../../../images/doctors3.jpg'
+import Doctor4 from '../../../images/doctors4.jpg'
+import Doctor5 from '../../../images/doctors6.jpg'
+import Doctor6 from '../../../images/doctors7.jpg'
+import Doctor7 from '../../../images/doctors5.jpg'
+import Doctor8 from '../../../images/doctors6.jpg'
 import InstagramIcon from '@mui/icons-material/Instagram';
-import women1 from '../../../images/women1.jpg';
-import signImg from '../../../images/sign.jpg';
+
 import { Link } from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import '../../../App.css';
 
-function Doctors() {
+function OtherDepartment() {
 
-    const teacherComponentStyle = {
-        // backgroundColor: '#174849',
-        padding: '30px 120px 30px 120px',
-    }
 
     const cardStyle = {
-        padding: '2%',
+        padding: '1%',
         // width:'30vw',
         // height:'60vh',
 
     }
-
     return (
         <>
-            <Box style={teacherComponentStyle}>
-                <h2 style={{ color: 'gray', paddingBottom: '4%', textAlign: 'center', paddingTop: '2%' }}>Meet The Our Doctors</h2>
+            <Box >
+                <h1 style={{ paddingBottom: '4%', fontWeight: 'bold', paddingTop: '8%' }}>Our Doctors</h1>
 
                 <Grid container direction="row"
                     justifyContent="space-around"
-                    alignItems="center" columns={{ xs: 4, sm: 12, md: 12 }} >
+                    alignItems="center"
+                    columns={{ xs: 4, sm: 12, md: 12 }} >
 
-
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card style={{ 
-                            // borderBottom: "8px solid #f17917"
-                            border: "5px solid #f17917"
-                        }}>
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #f17917" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher2}
+                                    image={Doctor1}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -91,15 +79,18 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #756c08" }}>
+
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #756c08" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher8}
+                                    style={{ height: '175px' }}
+                                    image={Doctor2}
                                     alt="green iguana"
                                 />
+
                                 <CardContent>
                                     <Grid container direction="row"
                                         justifyContent="center"
@@ -138,13 +129,13 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #c9156d" }}>
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #c9156d" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher3}
+                                    image={Doctor3}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -185,13 +176,13 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #ed0ef3" }}>
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #ed0ef3" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher4}
+                                    image={Doctor4}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -232,13 +223,12 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #157bc9" }}>
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #157bc9" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher5}
+                                    image={Doctor5}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -279,13 +269,14 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #41d02d" }}>
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #41d02d" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher7}
+                                    style={{height:'175px'}}
+                                    image={Doctor6}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -326,15 +317,16 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #dc7e41" }}>
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #dc7e41" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher9}
+                                    image={Doctor7}
                                     alt="green iguana"
                                 />
+
                                 <CardContent>
                                     <Grid container direction="row"
                                         justifyContent="center"
@@ -373,13 +365,13 @@ function Doctors() {
                         </Card>
                     </Grid>
 
-                    <Grid component="div" item xs={4} sm={6} md={6} sx={cardStyle}>
-                        <Card sx={{}} style={{ border: "5px solid #b61c64" }}>
+
+                    <Grid component="div" item xs={4} sm={6} md={3} sx={cardStyle}>
+                        <Card style={{ borderBottom: "4px solid #b61c64" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
-                                    height='90%'
-                                    image={teacher6}
+                                    image={Doctor8}
                                     alt="green iguana"
                                 />
                                 <CardContent>
@@ -407,7 +399,7 @@ function Doctors() {
                                                         style={{ color: ' #b61c64', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
                                                     />
                                                 </Link>
-                                                
+
                                                 <Link href="#demoIcon" color="inherit">
                                                     <LinkedInIcon
                                                         style={{ color: ' #b61c64 ', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
@@ -420,10 +412,13 @@ function Doctors() {
                             </CardActionArea>
                         </Card>
                     </Grid>
+
+
                 </Grid>
             </Box>
+
         </>
     )
 }
 
-export default Doctors
+export default OtherDepartment

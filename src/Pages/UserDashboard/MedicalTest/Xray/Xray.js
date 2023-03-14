@@ -3,7 +3,6 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typ
 import React, { useState } from 'react'
 import CardiologyImg from '../../../../images/Xray.png'
 import XrayModal from './XrayModal';
-import CarouselDept from '../../Department/OtherDepartments/CarouselDept'
 
 function Xray() {
 
